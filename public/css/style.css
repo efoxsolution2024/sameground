@@ -1,0 +1,26 @@
+body {font-family: 'Poppins', sans-serif;}
+
+.santa { animation: run 25s linear infinite;}
+.santa figure { margin: 0; }
+
+tr:nth-child(even) { background-color: #E4EAFF; }
+
+.main-logo img{filter: brightness(100);}
+
+/* Business / All Accounts */
+.page-item.disabled { display: none; }
+li {list-style: none;}
+.page-item.active a { color: #fff; font-weight: 800; background: #4F46E5;}
+table a:hover {color: #4F46E5}
+.page-item {  border-radius: 6px; /* border: 1px solid #4F46E5;  */}
+.page-item.active { background: #4F46E5; }
+.page-item:hover { background: #CED9FF; }
+.page-item a { display: block; width: 25px; text-align: center; border-radius: 6px; line-height: 30px; color: #000; font-size: 13px; }
+
+@keyframes run {
+    0% { left: 0; }
+    48% { -webkit-transform: rotateY(0deg); }                    
+    50% { left: calc(100% - 100px); -webkit-transform: rotateY(180deg); }
+    98% { -webkit-transform: rotateY(180deg); }
+    100% { left: 0; -webkit-transform: rotateY(0deg); }
+}        
