@@ -1,7 +1,4 @@
-    
-document.addEventListener('DOMContentLoaded', function()
-{
-
+document.addEventListener('DOMContentLoaded', function() {
     const options = {
         colors: ["#1A56DB", "#FDBA8C"],
         series: [
@@ -17,19 +14,19 @@ document.addEventListener('DOMContentLoaded', function()
             },
         ],
         chart: {
-            type: "bar",
+            type: "line",
             height: "320px",
             fontFamily: "Poppins",
             toolbar: {
-                show: false,
+                show: true,
+            },
+            zoom: {
+                enabled: false
             },
         },
         plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: "70%",
-                borderRadiusApplication: "end",
-                borderRadius: 8,
+            line: {
+                step: "stepline"
             },
         },
         tooltip: {
@@ -48,24 +45,45 @@ document.addEventListener('DOMContentLoaded', function()
             },
         },
         stroke: {
-            show: true,
-            width: 0,
-            colors: ["transparent"],
-        },
-        grid: {
-            show: false,
-            strokeDashArray: 4,
-            padding: {
-                left: 2,
-                right: 2,
-                top: -14
-            },
+             curve: 'straight'
         },
         dataLabels: {
-            enabled: false,
+            enabled: true,     
+            top:0,    
+            foreColor: '#fff',
+            style: {
+                colors: '#D8BFD8'
+              },   
+            background: {
+                enabled: false,  
+                foreColor: '#fff',   
+          },
+          dropShadow: {
+            enabled: true,
+            left: 0,
+            top: 0, 
+            opacity: 1
+        },
+         
+        style: {
+            fontSize: '10px',
+            color: '#fff',
+            position: 'absolute',
+            top: '-50px',
+        },
         },
         legend: {
             show: false,
+        },
+        markers: {
+            size: 12,
+            colors: ["#1A56DB", "#FDBA8C"],
+            strokeColors: "#ffffff",
+            strokeWidth: 2,
+            shape: "circle",
+            hover: {
+                sizeOffset: 2
+            },
         },
         xaxis: {
             floating: false,
@@ -85,12 +103,17 @@ document.addEventListener('DOMContentLoaded', function()
         },
         yaxis: {
             min: 0,
-            max: 20,
+            max: 10,
+            show: true,         
+        },
+        grid: {
             show: false,
+            strokeDashArray: 4,
+            padding: { left: 2, right: 2, top: -20 },
+            fill: { opacity: 0.3 }
         },
-        fill: {
-            opacity: 1,
-        },
+          fill: { opacity: 1 },
+   
     };
 
     let chart;
@@ -126,7 +149,3 @@ document.addEventListener('DOMContentLoaded', function()
         ]);
     });
 });
-  
-      
-
-      

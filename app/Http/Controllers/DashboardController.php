@@ -20,13 +20,11 @@ class DashboardController extends Controller
         $data = Business::all();
         $roles = Role::all();
         $tasks = Task::all();
-
-
-
    
 
-        $currentDate = Carbon::now()->startOfWeek(Carbon::MONDAY);
-        $last7Days = Carbon::now()->subWeek()->startOfWeek(Carbon::MONDAY);
+        $currentDate = Carbon::now()->startOfWeek(Carbon::SUNDAY);
+        $today = Carbon::now();
+        $last7Days = Carbon::now()->subWeek()->startOfWeek(Carbon::SUNDAY);
         $expiredData = [];
         $newData = [];
         $newData7 = [];
@@ -37,15 +35,17 @@ class DashboardController extends Controller
             $formatted7Date = $last7Days->format('F j'); 
 
             $expiredAccount = Business::whereDate('expired_date', $currentDate->toDateString())->count();
-            $newAccount = Business::whereDate('created_at', $currentDate->toDateString())->count(); 
-            
+            $expiredAccountToday = Business::whereDate('expired_date', $today->toDateString())->get();
+            $newAccount = Business::whereDate('created_at', $currentDate->toDateString())->count();  
+           
             $expiredAccount7 = Business::whereDate('expired_date', $last7Days->toDateString())->count();
             $newAccount7 = Business::whereDate('created_at', $last7Days->toDateString())->count();  
 
             $expiredData[] = [
                 'x' => $formattedDate,
                 'y' => $expiredAccount,
-            ];   
+            ];           
+      
             
             $expiredData7[] = [
                 'x' => $formatted7Date,
@@ -254,7 +254,7 @@ class DashboardController extends Controller
             'totalAllNext' => $totalAllNext,
             'newAccountsNext' => $newAccountsNext,
             'expiredAccountNext' => $expiredAccountNext,
-          
+            'expiredAccountToday' => $expiredAccountToday,         
          
         ]);
     }

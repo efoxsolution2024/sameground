@@ -9,7 +9,7 @@
             @include('components.dashboard.banner')
             <hr class="py-5">
         
-            <div class="flex justify-between overflow-auto gap-6"> 
+            <div class="main-dashboard flex justify-between overflow-auto gap-6"> 
                <div class="all_data grid-cols-2 w-[50%] grid gap-6">
                    @include('components.dashboard.main-left-sidebar')  
                </div>   

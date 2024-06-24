@@ -25,7 +25,7 @@
         </div>
     </div>
   
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 mb-5">
           <dl class="flex items-center">
               <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal me-1">New Website:</dt>
               <dd class=" text-sm text-indigo-600 font-semibold">$3,232</dd>
@@ -40,13 +40,13 @@
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
         <div class="flex justify-between items-center pt-5">
         <div @click.away="open = false" class="relative" x-data="{ open: false }">
-        <button @click="open = !open" class="block px-4 py-2 mt-2 text-base font-semibold text-white rounded-lg dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline mx-3">
+            <button @click="open = !open" class="block px-4 py-2 mt-2 text-base font-semibold text-indigo-600 rounded-lg dark:hover:bg-gray-600 dark:focus:bg-indigo-600 dark:focus:text-indigo-600 dark:hover:text-white dark:text-indigo-600 hover:text-indigo-600 focus:text-indigo-600 hover:bg-gray-200 focus:bg-indigo-600 focus:outline-none focus:shadow-outline mx-3">
             <span>Filter</span>
             <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
         </button>
-        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="relative right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="right-0 w-full mt-2 origin-top-right rounded-md shadow-lg absolute z-9 -top-6 text-white bg-indigo-600">
             <div class="px-2 py-2 rounded-md shadow dark-mode:bg-gray-700 mx-3">
                 <ul>
                     <li><a href="#" id="thisWeek" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">This Week</a></li>
@@ -68,12 +68,14 @@
   </div>
   </div>
   
-  <div class="mt-20">
-    
-  <div class="max-w-sm w-[50%] bg-white rounded-lg shadow p-4 md:p-6 w-2/4 box-border">
+
+  <!-- Second Graph -->
+  <div class="second-graph mt-20 flex gap-2">    
+    <div class="max-w-sm w-[50%] bg-white rounded-lg shadow p-4 md:p-6 w-2/4 box-border">
+               
                     <div class="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-5">
                       <dl class="pb-2">
-                        <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">All Account</dt>
+                        <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Total Count</dt>
                         <dd id="total" class="leading-none text-2xl font-bold text-indigo-600 pb-2">{{ $totalAll }}</dd>
                       </dl>
                       <div>
@@ -88,12 +90,12 @@
 
                     <div class="grid grid-cols-2 py-3">
                       <dl>
-                        <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">New Account</dt>
-                        <dd  id="new-account"class="leading-none text-xl font-bold text-green-500 dark:text-green-400">{{$firstquarterNew}}</dd>
+                        <dt class="text-base font-normal text-indigo-500 dark:text-gray-400 pb-1">New Account</dt>
+                        <dd  id="new-account"class="leading-none text-xl font-bold text-indigo-600 dark:text-indigo-600">{{$firstquarterNew}}</dd>
                       </dl>
                       <dl>
                         <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Expired Account</dt>
-                        <dd id="expired-account" class="leading-none text-xl font-bold text-red-600 dark:text-red-500">{{$firstquarterExpired}}</dd>
+                        <dd id="expired-account" class="leading-none text-xl font-bold">{{$firstquarterExpired}}</dd>
                       </dl>
                     </div>
 
@@ -102,7 +104,7 @@
                         <div class="flex justify-between items-center pt-5">
                           <!-- Button -->
                           <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                              <button @click="open = !open" class="block px-4 py-2 mt-2 text-base font-semibold text-white rounded-lg dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline mx-3">
+                              <button @click="open = !open" class="block px-4 py-2 mt-2 text-base font-semibold text-indigo-600 rounded-lg dark:hover:bg-gray-600 dark:focus:bg-indigo-600 dark:focus:text-indigo-600 dark:hover:text-white dark:text-indigo-600 hover:text-indigo-600 focus:text-indigo-600 hover:bg-gray-200 focus:bg-indigo-600 focus:outline-none focus:shadow-outline mx-3">
                                   <span>Filter</span>
                                   <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
                                       <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -132,35 +134,72 @@
 
 
       <!-- Data Name --> 
-      <div class="data w-2/4 box-border">
-        <table class="text-base text-left rtl:text-right mb-14 ">
-    
-              <thead class="">
-                  <tr class="font-normal border-b-2 border-gray-300">                  
-                      <th scope="col" class="pl-4 py-3 font-semibold text-base text-gray-900"> Website </th>
-                      <th scope="col" class="px-[56px] py-3 font-semibold text-base text-gray-900" style="padding: 0 0 0 230px;;"> Expired Date </th>
+      <div class="data w-2/4 box-border w-[50%]">
+        <div class="bg-ingigo-600 pl-4 font-bold mb-4 ">Current Month</div>
+           
+        <table class="text-base text-left rtl:text-right mb-14 w-full">    
+            <thead class="">
+            @if ($expiredAccountNames->isNotEmpty())
+                <tr class="font-normal border-b-2 border-gray-300 flex">    
+                @else              
+                <tr class="font-normal border-b-2 border-gray-300 flex justify-between px-4">
+                  @endif  
+                    <th scope="col" class=" font-semibold text-base text-gray-900 w-full pl-4"> Website </th>
+                    <th scope="col" class=" font-semibold text-base text-gray-900 text-center w-full" > Expired Date </th>
+                </tr>
+            </thead>
+            <tbody class="w-full"> 
+            @if ($expiredAccountNames->isNotEmpty())
+              @foreach ($expiredAccountNames as $expiredAccountName)
+                  <tr class="border-b-1 border-gray-300 text-xs flex justify-between">
+                      <td class="py-4 pl-4 w-full"><a href="https://{{ $expiredAccountName->website }}" target="_blank"> {{ $expiredAccountName->website }}</a></td>
+                      <td class="px-0 py-4 pl-4 w-full text-center">{{ date('F j, Y', strtotime($expiredAccountName->expired_date)) }}</td>
                   </tr>
-              </thead>
-              <tbody> @foreach ($expiredAccountNames as $expiredAccountName)
-                  <tr class="border-b-1 border-gray-300 text-xs ">                
-                      <td class=" py-4 pl-4 relative"> {{ $expiredAccountName->website }}</td>                 
-                      <td class="px-0 py-4 pl-4 relative" style="padding: 0 44px 0 240px;"> {{ date('F j, Y', strtotime($expiredAccountName->expired_date))}}</td>                 
-                  </tr>           
-                  @endforeach
-                
-              </tbody>
-              
+              @endforeach
+            @else
+              <tr><td colspan="6" class="text-center px-0 py-4 pl-4 relative text-sm">No results found.</td></tr>
+            @endif
+                       
+            </tbody>            
           </table>
-          <div class="mt-4">
-            {{ $expiredAccountNames->links() }}
+          {{ $expiredAccountNames->links() }}
+
+          <div class="bg-ingigo-600 pl-4 font-bold mb-4 ">Today</div>
+          <table class="text-base text-left rtl:text-right mb-14 w-full">    
+            <thead class="">
+            @if ($expiredAccountToday->isNotEmpty())
+                <tr class="font-normal border-b-2 border-gray-300 flex">    
+                @else              
+                <tr class="font-normal border-b-2 border-gray-300 flex justify-between px-4">
+                  @endif  
+                    <th scope="col" class=" font-semibold text-base text-gray-900 w-full pl-4"> Website </th>
+                    <th scope="col" class=" font-semibold text-base text-gray-900 text-center w-full" > Expired Date </th>
+                </tr>
+            </thead>
+            <tbody class="w-full"> 
+            @if ($expiredAccountToday->isNotEmpty())
+              @foreach ($expiredAccountToday as $expiredAccount)
+                  <tr class="border-b-1 border-gray-300 text-xs flex justify-between">
+                      <td class="py-4 pl-4 w-full"><a href="https://{{ $expiredAccount->website }}" target="_blank"> {{ $expiredAccount->website }}</a></td>
+                      <td class="px-0 py-4 pl-4 w-full text-center">{{ date('F j, Y', strtotime($expiredAccount->expired_date)) }}</td>
+                  </tr>
+              @endforeach
+            @else
+              <tr><td colspan="6" class="text-center px-0 py-4 pl-4 relative text-sm">No results found.</td></tr>
+            @endif
+                       
+            </tbody>            
+          </table>
+          <div class="pagination-link mt-4">
+          
         </div>
         </div>
 
             
-      </div>
-    </div>
+</div>
 </div>
 
+</div>
 
 <script>
   const expiredData = @json($expiredData);
@@ -181,13 +220,13 @@ document.addEventListener('DOMContentLoaded', function() {
     series: [
       {
         name: "New accounts",
-        color: "#31C48D",
+        color: "#1A56DB",
         data: newAccountsData,
       },
       {
         name: "Expired Accounts",
         data: expiredAccountsData,
-        color: "#F05252",
+        color: "#FDBA8C",
       }
     ],
     chart: {
@@ -195,7 +234,12 @@ document.addEventListener('DOMContentLoaded', function() {
       type: "bar",
       width: "100%",
       height: 400,
-      toolbar: { show: false }
+      toolbar: {
+                show: true,
+            },
+            zoom: {
+                enabled: false
+            },
     },
     plotOptions: {
       bar: {

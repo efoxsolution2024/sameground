@@ -1,11 +1,19 @@
 body {font-family: 'Poppins', sans-serif;}
 
+
 .santa { animation: run 25s linear infinite;}
 .santa figure { margin: 0; }
 
 tr:nth-child(even) { background-color: #E4EAFF; }
 
 .main-logo img{filter: brightness(100);}
+
+/* Dashboard */
+#expired-account { color: #FDBA8C;}
+.second-graph .apexcharts-menu-icon { position: relative; top: -50px; }
+.second-graph .apexcharts-menu.apexcharts-menu-open { top: -25px; }
+.main-dashboard {overflow: unset !important;}
+
 
 /* Business / All Accounts */
 .page-item.disabled { display: none; }
@@ -16,6 +24,7 @@ table a:hover {color: #4F46E5}
 .page-item.active { background: #4F46E5; }
 .page-item:hover { background: #CED9FF; }
 .page-item a { display: block; width: 25px; text-align: center; border-radius: 6px; line-height: 30px; color: #000; font-size: 13px; }
+
 
 @keyframes run {
     0% { left: 0; }

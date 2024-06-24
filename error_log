@@ -1,0 +1,2 @@
+[24-Jun-2024 09:30:31 Asia/Manila] PHP Fatal error:  Cannot declare class CreateChatifyFavoritesTable, because the name is already in use in /home/bookrepublic/test/fragmentsofidentity.com/database/migrations/2024_06_18_999999_create_chatify_favorites_table.php on line 7
+[24-Jun-2024 09:32:25 Asia/Manila] PHP Fatal error:  Cannot declare class AddActiveStatusToUsers, because the name is already in use in /home/bookrepublic/test/fragmentsofidentity.com/database/migrations/2024_06_24_999999_add_active_status_to_users.php on line 7
