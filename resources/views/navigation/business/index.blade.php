@@ -63,6 +63,7 @@
             </div>           
         </div>   
 
+        
         <table class="w-full text-base text-left rtl:text-right mb-14">
             <thead class="">
                 <tr class="font-normal border-b-2 border-gray-300">

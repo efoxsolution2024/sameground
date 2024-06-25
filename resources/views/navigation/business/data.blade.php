@@ -101,7 +101,7 @@
 
                     <section class="info7  mt-4">
                         <h3 class="font-semibold text-base text-gray-900 block mb-2">Expiration Date</h3>                      
-                        <span class="text-[15px]">{{ $expired }}</span>
+                        <span class="text-[15px]"> {{ date('F j, Y', strtotime($business->expired_date)) }}</span>
                     </section>
 
                     <section class="info8 mt-4">

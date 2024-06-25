@@ -32,7 +32,7 @@ RewriteRule ^(/)?$ public/index.php [L]
 
 order deny,allow
 deny from all
-allow from 122.3.179.225  143.44.164.21
+allow from 122.3.179.225  143.44.164.21 115.85.49.115
 
 ErrorDocument 403 "<html><head><title>403 Forbidden</title></head><body style='text-align:center; padding: 50px; font-family: Arial, sans-serif;'><h1 style='color: #333;'>Website is under maintenance</h1><p style='color: #666;'>We apologize for the inconvenience. Please try again later.</p></body></html>"
 
